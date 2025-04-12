@@ -13,35 +13,38 @@ $(document).ready(function() {
     });
 
     // Skills Section: Create Skill Cards Dynamically
-    const skills = [
-        { name: "C# .NET", description: "Desktop and mobile application development." },
-        { name: "Python", description: "Machine learning." },
-        { name: "R Programming", description: "Data analysis." },
-        { name: "React.js", description: "Frontend development." },
-        { name: "Tailwind CSS", description: "Frontend styling." },
-        { name: "HTML", description: "Web structure." },
-        { name: "CSS", description: "Web styling." },
-        { name: "JavaScript", description: "Web interactivity." },
-        { name: "Express.js", description: "Backend services." },
-        { name: "PostgreSQL", description: "Database management." },
-        { name: "MySQL", description: "Database management." },
-        { name: "SQLite", description: "Database management." },
-        { name: "Oracle", description: "Database management." },
-        { name: "SQL", description: "Database design and management." },
-        { name: "Microsoft Office Suite", description: "Word, Excel, Access, Project." },
-        { name: "Computer Systems and Networking Security", description: "Strong understanding." }
-    ];
+        // Skills Section: Create Skill Cards Dynamically
+const skills = [
+    { name: "C# .NET", description: "Desktop and mobile application development.", icon: "images/dotnet.png" }, 
+    { name: "Python", description: "Machine learning and automation.", icon: "images/python.png" },
+    { name: "R Programming", description: "Data analysis.", icon: "images/r.png" },
+    { name: "React.js", description: "Frontend development.", icon: "images/react.png" },
+    { name: "Tailwind CSS", description: "Frontend styling.", icon: "images/tailwind.png" },
+    { name: "HTML", description: "Web structure.", icon: "images/html.png" },
+    { name: "CSS", description: "Web styling.", icon: "images/css.png" },
+    { name: "JavaScript", description: "Web interactivity.", icon: "images/js.png" },
+    { name: "Express.js", description: "Backend services.", icon: "images/expressjs.png" },
+    { name: "PostgreSQL", description: "Database management.", icon: "images/postgres.png" },
+    { name: "MySQL", description: "Database management.", icon: "images/mysql.png" },
+    { name: "SQLite", description: "Database management.", icon: "images/sqlite.png" },
+    { name: "Oracle", description: "Database management.", icon: "images/oracle.png" },
+    { name: "SQL", description: "Database design and management.", icon: "images/sql.png" },
+    { name: "Microsoft Office Suite", description: "Word, Excel, Access, Project.", icon: "images/microsoft.png" },
+    { name: "Computer Systems and Networking Security", description: "Strong understanding.", icon: "images/computer.png" }
+];
 
-    const skillsGrid = $('.skills-grid');
-    skills.forEach(skill => {
-        const card = `
-            <div class="skill-card">
-                <h3>${skill.name}</h3>
-                <p>${skill.description}</p>
-            </div>
-        `;
-        skillsGrid.append(card);
-    });
+   
+const skillsGrid = $('.skills-grid');
+skills.forEach(skill => {
+    const card = `
+        <div class="skill-card">
+            <img src="${skill.icon}" alt="${skill.name} Icon" class="skill-icon">
+            <h3>${skill.name}</h3>
+            <p>${skill.description}</p>
+        </div>
+    `;
+    skillsGrid.append(card);
+});
 
     // Projects Section: Slick Carousel
     $('.carousel').slick({
