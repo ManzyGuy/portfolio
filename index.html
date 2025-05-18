@@ -3,83 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emmanuel Kawonga - Portfolio</title>
+    <title>Emmanuel Kawonga | Software Developer</title>
+    <meta name="description" content="Portfolio of Emmanuel Kawonga, a software developer specializing in web and application development">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header>
+    <!-- Navigation -->
+    <header class="header">
         <div class="container">
-            <h1>Emmanuel Kawonga</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <a href="#" class="logo">EK</a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#experience" class="nav-link">Experience</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Emmanuel Kawonga</h1>
+                <p class="hero-subtitle">Software Developer & Problem Solver</p>
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2>About Me</h2>
-            <div class="profile-grid">
-                <img src="images/me.jpg" alt="Emmanuel Kawonga">
-                <p>
-                    A motivated and detail-oriented student pursuing a BSc (Hons) Degree in Computing from the National College of Information Technology (NACIT) in Lilongwe. Currently holding an Advanced Diploma in Computing, he has a strong foundation in software development, web development, database management, and computer systems security. Emmanuel has hands-on experience with various technologies and frameworks, gained through academic projects and a software development internship at ICTAID, where he was involved in testing, debugging, and implementing software features. He also has experience in marketing ICTAID's services and is passionate about continuous learning and innovation, Emmanuel stays updated with emerging technologies.
-                </p>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/me.jpg" alt="Emmanuel Kawonga" class="profile-img">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="about-text">
+                        A motivated and detail-oriented student pursuing a BSc (Hons) Degree in Computing from the National College of Information Technology (NACIT) in Lilongwe. Currently holding an Advanced Diploma in Computing, I have a strong foundation in software development, web development, database management, and computer systems security.
+                    </p>
+                    <p class="about-text">
+                        I have hands-on experience with various technologies and frameworks, gained through academic projects and a software development internship at ICTAID, where I was involved in testing, debugging, and implementing software features. I also have experience in marketing ICTAID's services and am passionate about continuous learning and innovation.
+                    </p>
+                    <div class="about-cta">
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        <a href="#" class="btn btn-primary" id="download-cv">Download CV</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="section bg-light">
         <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                </div>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="database">Database</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="skills-grid"></div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2>Projects</h2>
-            <div class="carousel">
-                </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section bg-light">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-timeline">
-                </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Email: kawongaemmanuel3@gmail.com</p>
-                <p><i class="fas fa-phone"></i> Phone: +265 (0) 885303716</p>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-carousel">
+                <!-- Projects will be populated by JavaScript -->
+            </div>
+            <div class="projects-cta">
+                <a href="#" class="btn btn-primary">View All Projects</a>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-light">
         <div class="container">
-            <p>&copy; 2024 Emmanuel Kawonga. All rights reserved.</p>
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>kawongaemmanuel3@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+265 (0) 885303716</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lilongwe, Malawi</span>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">EK</a>
+                    <p>Software Developer & Problem Solver</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Emmanuel Kawonga. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
 </body>
 </html>
