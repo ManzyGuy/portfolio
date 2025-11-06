@@ -65,100 +65,112 @@ $(document).ready(function() {
 
     // Skills Data
     const skills = [
-        { 
-            name: "C# .NET", 
-            description: "Desktop and mobile application development.", 
-            icon: "images/dotnet.png",
-            category: "backend"
-        },
-        { 
-            name: "Python", 
-            description: "Machine learning and automation.", 
-            icon: "images/python.png",
-            category: "backend"
-        },
-        { 
-            name: "R Programming", 
-            description: "Data analysis.", 
-            icon: "images/r.png",
-            category: "other"
-        },
-        { 
-            name: "React.js", 
-            description: "Frontend development.", 
+        {
+            name: "React.js",
+            description: "Frontend development.",
             icon: "images/react.png",
             category: "frontend"
         },
-        { 
-            name: "Tailwind CSS", 
-            description: "Frontend styling.", 
+        {
+            name: "Tailwind CSS",
+            description: "Frontend styling.",
             icon: "images/tailwind.png",
             category: "frontend"
         },
-        { 
-            name: "HTML", 
-            description: "Web structure.", 
+        {
+            name: "HTML",
+            description: "Web structure.",
             icon: "images/html.png",
             category: "frontend"
         },
-        { 
-            name: "CSS", 
-            description: "Web styling.", 
+        {
+            name: "CSS",
+            description: "Web styling.",
             icon: "images/css.png",
             category: "frontend"
         },
-        { 
-            name: "JavaScript", 
-            description: "Web interactivity.", 
+        {
+            name: "JavaScript",
+            description: "Web interactivity.",
             icon: "images/js.png",
             category: "frontend"
         },
-        { 
-            name: "Express.js", 
-            description: "Backend services.", 
+        {
+            name: "C# .NET",
+            description: "Software and backend development.",
+            icon: "images/dotnet.png",
+            category: "backend"
+        },
+        {
+            name: "Python",
+            description: "Machine learning and automation.",
+            icon: "images/python.png",
+            category: "backend"
+        },
+        {
+            name: "Express.js",
+            description: "Backend services.",
             icon: "images/expressjs.png",
             category: "backend"
         },
-        { 
-            name: "PostgreSQL", 
-            description: "Database management.", 
+        {
+            name: "PHP",
+            description: "Backend development.",
+            icon: "images/php.png",
+            category: "backend"
+        },
+        {
+            name: "PostgreSQL",
+            description: "Database management.",
             icon: "images/postgres.png",
             category: "database"
         },
-        { 
-            name: "MySQL", 
-            description: "Database management.", 
+        {
+            name: "MySQL",
+            description: "Database management.",
             icon: "images/mysql.png",
             category: "database"
         },
-        { 
-            name: "SQLite", 
-            description: "Database management.", 
+        {
+            name: "SQLite",
+            description: "Database management.",
             icon: "images/sqlite.png",
             category: "database"
         },
-        { 
-            name: "Oracle", 
-            description: "Database management.", 
+        {
+            name: "Oracle",
+            description: "Database management.",
             icon: "images/oracle.png",
             category: "database"
         },
-        { 
-            name: "SQL", 
-            description: "Database design and management.", 
-            icon: "images/sql.png",
-            category: "database"
-        },
-        { 
-            name: "Microsoft Office Suite", 
-            description: "Word, Excel, Access, Project.", 
-            icon: "images/microsoft.png",
+        {
+            name: "R Programming",
+            description: "Data analysis.",
+            icon: "images/r.png",
             category: "other"
         },
-        { 
-            name: "Computer Systems and Networking Security", 
-            description: "Strong understanding.", 
+        {
+            name: "Android",
+            description: "Application Development.",
+            icon: "images/app.jpeg",
+            category: "other"
+        },
+        {
+            name: "Networking",
+            description: "LAN, WAN, WLAN configuration and management.",
             icon: "images/computer.png",
+            category: "other"
+        },
+        {
+            name: "Technical Support",
+            description: "Software installation, Network & Systems Security.",
+            icon: "images/computer.png",
+            category: "other"
+        },
+        {
+            name: "Microsoft Office Suite",
+            description: "Word, Excel, Access, Project.",
+            icon: "images/microsoft.png",
             category: "other"
         }
     ];
@@ -263,19 +275,19 @@ $(document).ready(function() {
     // Experience Data
     const experience = [
         {
+            title: "ICT Tutor & Freelance ICT Consultant",
+            date: "November 2025 – Present",
+            description: "Providing ICT tutoring services to students and professionals. Offering freelance basic ICT solutions including system setup and configuration. Delivering technical support and training on various software applications."
+        },
+        {
+            title: "Systems Analyst Intern, Malawi Human Rights Commission (MHRC)",
+            date: "July 2025 – October 2025",
+            description: "Assisting in the management and maintenance of the Commission's network infrastructure. Troubleshooting and resolving hardware and software issues. Supporting users with system problems and ensuring network uptime. Documenting technical procedures and contributing to system improvements. Coordinated documentary production, videography, and photography projects. Developed visual content to support organizational initiatives. Utilized multimedia assets to enhance communication and engagement."
+        },
+        {
             title: "Software Development Intern, ICTAID",
-            date: "February 2024 – August 2024",
-            description: "Assisted in testing, debugging, and contributing to the development of software applications. Collaborated with team members to identify and resolve software defects. Documented software designs, code, and testing activities. Continuously learned and applied the latest software development practices. Engaged in marketing ICTAID's services to potential clients."
-        },
-        {
-            title: "Freelance Web Developer",
-            date: "2022 – Present",
-            description: "Developed and maintained websites for small businesses and individuals. Worked closely with clients to understand requirements and deliver tailored solutions. Implemented responsive designs and optimized websites for performance and SEO."
-        },
-        {
-            title: "University Projects",
-            date: "2021 – 2024",
-            description: "Completed various academic projects including database systems, web applications, and software prototypes. Gained hands-on experience with different technologies and methodologies through coursework and team projects."
+            date: "February 2024 – December 2024",
+            description: "Assisted in testing, debugging, and developing software applications. Provided support on software and hardware troubleshooting. Collaborated on ICT-related project development and documentation. Participated in marketing and client outreach for ICTAID services."
         }
     ];
 
@@ -292,6 +304,80 @@ $(document).ready(function() {
             </div>
         `;
         timeline.append(itemHTML);
+    });
+
+    // Certifications Data
+    const certifications = [
+        {
+            name: "Database Management",
+            issuer: "PostgreSQL, MySQL, SQLite, Oracle"
+        },
+        {
+            name: "System Administration",
+            issuer: "Windows and Linux, Server administration"
+        },
+        {
+            name: "Hardware Support",
+            issuer: "Maintenance and repair of computers, laptops, servers"
+        },
+        {
+            name: "Web Development",
+            issuer: "Website design and development"
+        },
+        {
+            name: "Level 4 Diploma in Computing",
+            issuer: "NACIT"
+        },
+        {
+            name: "Level 5 Advanced Diploma in Computing",
+            issuer: "NACIT"
+        }
+    ];
+
+    // Populate Certifications Grid
+    const certificationsGrid = $('.certifications-grid');
+    certifications.forEach(certification => {
+        const card = `
+            <div class="certification-card">
+                <h3>${certification.name}</h3>
+                <p>${certification.issuer}</p>
+            </div>
+        `;
+        certificationsGrid.append(card);
+    });
+
+    // Volunteer Work Data
+    const volunteerWork = [
+        {
+            title: "Media Support",
+            date: "2019–2022",
+            description: "Videography and photography at Bwaila Living Waters Church"
+        },
+        {
+            title: "Digital Profile Management",
+            date: "2022–2024",
+            description: "Managed Walani Tiga Fashion House's Google Business profile"
+        },
+        {
+            title: "Presidential Debate Taskforce",
+            date: "2025",
+            description: "Contributed to the smooth execution of the debate, ensuring a successful outcome"
+        }
+    ];
+
+    // Populate Volunteer Work Timeline
+    const volunteerTimeline = $('.volunteer-timeline');
+    volunteerWork.forEach((item, index) => {
+        const itemHTML = `
+            <div class="volunteer-item">
+                <div class="volunteer-content">
+                    <h3>${item.title}</h3>
+                    <p class="volunteer-date">${item.date}</p>
+                    <p>${item.description}</p>
+                </div>
+            </div>
+        `;
+        volunteerTimeline.append(itemHTML);
     });
 
     // Contact Form Submission
