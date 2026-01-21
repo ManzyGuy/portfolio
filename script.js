@@ -58,7 +58,7 @@ $(document).ready(function () {
         { name: "HTML", description: "Markup Language", icon: "fa-brands fa-html5", category: "frontend" },
         { name: "CSS", description: "Styling", icon: "fa-brands fa-css3-alt", category: "frontend" },
         { name: "JavaScript", description: "Programming", icon: "fa-brands fa-js", category: "frontend" },
-        
+
         // Backend
         { name: "C# (.NET)", description: "Software Development", icon: "fa-brands fa-microsoft", category: "backend" },
         { name: "Python", description: "Programming", icon: "fa-brands fa-python", category: "backend" },
@@ -149,13 +149,13 @@ $(document).ready(function () {
             image: "https://placehold.co/600x400/8b5cf6/ffffff?text=AI+Chatbot",
             tags: ["Python", "NLP", "Machine Learning"]
         },
-         {
+        {
             title: "School Information Website",
             description: "Responsive school website with admissions portal, gallery, and content management system.",
             image: "https://placehold.co/600x400/ec4899/ffffff?text=School+Website",
             tags: ["PHP", "MySQL", "JavaScript"]
         },
-         {
+        {
             title: "Church Media Support",
             description: "Managed website content and digital media to enhance communication and visibility.",
             image: "https://placehold.co/600x400/06b6d4/ffffff?text=Media+Support",
@@ -249,11 +249,13 @@ $(document).ready(function () {
     const certifications = [
         {
             name: "Level 4 Diploma in Computing",
-            issuer: "NACIT"
+            issuer: "NCC Education",
+            logo: "https://placehold.co/200x80/0f172a/ffffff?text=NCC+Logo"
         },
         {
             name: "Level 5 Advanced Diploma in Computing",
-            issuer: "NACIT"
+            issuer: "NCC Education",
+            logo: "https://placehold.co/200x80/0f172a/ffffff?text=NCC+Logo"
         }
     ];
 
@@ -263,6 +265,7 @@ $(document).ready(function () {
         certifications.forEach(certification => {
             const card = `
                 <div class="certification-card">
+                    <img src="${certification.logo}" alt="${certification.issuer}" class="card-logo">
                     <h3>${certification.name}</h3>
                     <p>${certification.issuer}</p>
                 </div>
@@ -279,9 +282,9 @@ $(document).ready(function () {
             description: "Videography and photography – Bwaila Living Waters Church"
         },
         {
-             title: "Presidential Debate Taskforce",
-             date: "2025",
-             description: "ICT and operational support"
+            title: "Presidential Debate Taskforce",
+            date: "2025",
+            description: "ICT and operational support"
         },
         {
             title: "Digital Profile Management",

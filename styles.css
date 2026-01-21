@@ -22,6 +22,16 @@
     --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
 }
 
+.card-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 *,
 *::before,
 *::after {
