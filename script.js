@@ -50,57 +50,47 @@ $(document).ready(function () {
     });
 
     // Skills Data
+    // Skills Data
     const skills = [
-        { name: "C# (.NET)", description: "Software Development", icon: "images/dotnet.png", category: "backend" },
-        { name: "Python", description: "Software Development", icon: "images/python.png", category: "backend" },
-        { name: "R Programming", description: "Software Development", icon: "images/r.png", category: "backend" },
-        { name: "React.js", description: "Frontend Development", icon: "images/react.png", category: "frontend" },
-        { name: "Tailwind CSS", description: "Frontend Development", icon: "images/tailwind.png", category: "frontend" },
-        { name: "HTML", description: "Frontend Development", icon: "images/html.png", category: "frontend" },
-        { name: "CSS", description: "Frontend Development", icon: "images/css.png", category: "frontend" },
-        { name: "JavaScript", description: "Frontend Development", icon: "images/js.png", category: "frontend" },
-        { name: "Express.js", description: "Backend Development", icon: "images/expressjs.png", category: "backend" },
-        { name: "PHP", description: "Backend Development", icon: "images/php.png", category: "backend" },
-        { name: "PostgreSQL", description: "Database Management", icon: "images/postgres.png", category: "database" },
-        { name: "MySQL", description: "Database Management", icon: "images/mysql.png", category: "database" },
-        { name: "SQLite", description: "Database Management", icon: "images/sqlite.png", category: "database" },
-        { name: "Oracle", description: "Database Management", icon: "images/oracle.png", category: "database" },
-        { name: "Android Dev", description: "Application Development", icon: "images/app.jpeg", category: "other" },
-        { name: "Web Dev", description: "Application Development", icon: "images/web.png", category: "other" },
-        { name: "Desktop Dev", description: "Application Development", icon: "images/desktop.png", category: "other" },
-        { name: "Sys Admin", description: "Windows & Linux", icon: "images/server.png", category: "other" },
-        { name: "Networking", description: "LAN, WAN, WLAN", icon: "images/network.png", category: "other" },
-        { name: "Hardware Support", description: "Maintenance & Repair", icon: "images/hardware.png", category: "other" },
-        { name: "Tech Support", description: "Security & Installation", icon: "images/support.png", category: "other" },
-        { name: "Microsoft Office", description: "Productivity Tools", icon: "images/microsoft.png", category: "other" }
+        // Frontend
+        { name: "React.js", description: "Frontend Framework", icon: "fa-brands fa-react", category: "frontend" },
+        { name: "Tailwind CSS", description: "CSS Framework", icon: "fa-solid fa-wind", category: "frontend" },
+        { name: "HTML", description: "Markup Language", icon: "fa-brands fa-html5", category: "frontend" },
+        { name: "CSS", description: "Styling", icon: "fa-brands fa-css3-alt", category: "frontend" },
+        { name: "JavaScript", description: "Programming", icon: "fa-brands fa-js", category: "frontend" },
+        
+        // Backend
+        { name: "C# (.NET)", description: "Software Development", icon: "fa-brands fa-microsoft", category: "backend" },
+        { name: "Python", description: "Programming", icon: "fa-brands fa-python", category: "backend" },
+        { name: "R Programming", description: "Data Analysis", icon: "fa-solid fa-chart-bar", category: "backend" },
+        { name: "Express.js", description: "Node.js Framework", icon: "fa-brands fa-node-js", category: "backend" },
+        { name: "PHP", description: "Server-side Scripting", icon: "fa-brands fa-php", category: "backend" },
+
+        // Database
+        { name: "PostgreSQL", description: "Relational Database", icon: "fa-solid fa-database", category: "database" },
+        { name: "MySQL", description: "Database System", icon: "fa-solid fa-database", category: "database" },
+        { name: "SQLite", description: "Embedded Database", icon: "fa-solid fa-server", category: "database" },
+        { name: "Oracle", description: "Enterprise Database", icon: "fa-solid fa-database", category: "database" },
+
+        // Other
+        { name: "Android Dev", description: "Mobile Apps", icon: "fa-brands fa-android", category: "other" },
+        { name: "Web Dev", description: "Web Applications", icon: "fa-solid fa-globe", category: "other" },
+        { name: "Desktop Dev", description: "Desktop Apps", icon: "fa-solid fa-desktop", category: "other" },
+        { name: "System Admin", description: "Windows & Linux", icon: "fa-brands fa-linux", category: "other" },
+        { name: "Networking", description: "LAN, WAN, WLAN", icon: "fa-solid fa-network-wired", category: "other" },
+        { name: "Hardware Support", description: "Maintenance & Repair", icon: "fa-solid fa-screwdriver-wrench", category: "other" },
+        { name: "Tech Support", description: "Security & Installation", icon: "fa-solid fa-headset", category: "other" },
+        { name: "Microsoft Office", description: "Productivity Tools", icon: "fa-brands fa-microsoft", category: "other" }
     ];
 
     // Populate Skills Grid
     const skillsGrid = $('.skills-grid');
     skills.forEach(skill => {
-        // Use a default icon if specific one doesn't exist or just use a generic code icon for now to avoid broken images
-        // For this update, I'll keep the logic but be aware images might need to be checked.
-        const card = `
-            <div class="skill-card" data-category="${skill.category}">
-                <div class="skill-icon-wrapper">
-                    <i class="fas fa-code"></i> 
-                </div>
-                <h3>${skill.name}</h3>
-                <p>${skill.description}</p>
-            </div>
-        `;
-        // Note: I replaced img with a font awesome icon wrapper for now as I don't have all the new icons. 
-        // If the user wants specific images, they should be added to the images folder.
-        // Reverting to img tag if I assume images exist, but for safety I will use the icon class logic if I can, 
-        // but the previous code used <img>. Let's stick to <img> but maybe add an error handler or just keep it as is.
-        // Actually, let's use the <img> tag as before, but I'll need to make sure the paths are correct.
-        // The user didn't provide new images, so I will use a generic placeholder or the existing ones where possible.
-        // For the purpose of this task, I will use the <img> tag but with a fallback or just keep it simple.
-
-        // Let's use the code from before but cleaned up.
         skillsGrid.append(`
             <div class="skill-card" data-category="${skill.category}">
-                 <img src="${skill.icon}" alt="${skill.name}" class="skill-icon" onerror="this.src='images/default-skill.png'; this.onerror=null;"> 
+                 <div class="skill-icon-wrapper">
+                    <i class="${skill.icon} fa-3x"></i> 
+                 </div>
                 <h3>${skill.name}</h3>
                 <p>${skill.description}</p>
             </div>
@@ -126,39 +116,51 @@ $(document).ready(function () {
         {
             title: "Company Websites",
             description: "Developed websites for several companies using modern web technologies.",
-            image: "images/company.jpeg",
+            image: "https://placehold.co/600x400/2563eb/ffffff?text=Company+Websites",
             tags: ["HTML", "CSS", "JavaScript"]
         },
         {
             title: "Brochure Website",
             description: "Created an informative website for a school project with responsive design.",
-            image: "images/xul_web.jpeg",
+            image: "https://placehold.co/600x400/10b981/ffffff?text=Brochure+Website",
             tags: ["HTML", "CSS", "Bootstrap"]
         },
         {
             title: "Expense Tracking System",
             description: "Designed a Windows desktop application for tracking expenses with reporting features.",
-            image: "images/exp_tracker.jpeg",
+            image: "https://placehold.co/600x400/f59e0b/ffffff?text=Expense+Tracker",
             tags: ["C#", ".NET", "SQL"]
         },
         {
             title: "Database Prototype",
             description: "Developed a MySQL database for data management with complex relationships.",
-            image: "images/database.jpeg",
+            image: "https://placehold.co/600x400/6366f1/ffffff?text=Database+Prototype",
             tags: ["MySQL", "Database Design"]
         },
         {
             title: "Security Application",
             description: "Built a mobile panic button app for emergency situations with GPS tracking.",
-            image: "images/app.jpeg",
+            image: "https://placehold.co/600x400/ef4444/ffffff?text=Security+App",
             tags: ["Android", "Java", "Firebase"]
         },
         {
             title: "AI Chatbot",
             description: "Developed an interactive chatbot as a side project using natural language processing.",
-            image: "images/chatbot.jpeg",
+            image: "https://placehold.co/600x400/8b5cf6/ffffff?text=AI+Chatbot",
             tags: ["Python", "NLP", "Machine Learning"]
         },
+         {
+            title: "School Information Website",
+            description: "Responsive school website with admissions portal, gallery, and content management system.",
+            image: "https://placehold.co/600x400/ec4899/ffffff?text=School+Website",
+            tags: ["PHP", "MySQL", "JavaScript"]
+        },
+         {
+            title: "Church Media Support",
+            description: "Managed website content and digital media to enhance communication and visibility.",
+            image: "https://placehold.co/600x400/06b6d4/ffffff?text=Media+Support",
+            tags: ["WordPress", "CMS"]
+        }
     ];
 
     // Initialize Projects Carousel
@@ -195,7 +197,7 @@ $(document).ready(function () {
 
         $('.projects-carousel').slick('slickAdd', `
             <div class="project-slide">
-                <img src="${project.image}" alt="${project.title}" class="project-image" onerror="this.src='images/default-project.png'; this.onerror=null;">
+                <img src="${project.image}" alt="${project.title}" class="project-image">
                 <div class="project-content">
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
@@ -209,18 +211,21 @@ $(document).ready(function () {
     const experience = [
         {
             title: "ICT Tutor & Freelance ICT Consultant",
-            date: "November 2025 – Present",
-            description: "Providing ICT tutoring services to students and professionals. Offering freelance basic ICT solutions including system setup and configuration. Delivering technical support and training on various software applications."
+            company: "Self-Employed, Lilongwe",
+            date: "October 2025 – Present",
+            description: "Deliver ICT tutoring to students and professionals, focusing on practical understanding and confidence in technology use. Train users on software applications, basic computing, and digital productivity tools. Provide freelance ICT support including system setup, configuration, and troubleshooting. Develop clear explanations and training materials to help users understand and adopt systems effectively."
         },
         {
-            title: "Systems Analyst Intern, Malawi Human Rights Commission (MHRC)",
+            title: "Systems / ICT Support Intern",
+            company: "Malawi Human Rights Commission (MHRC), Lilongwe",
             date: "July 2025 – October 2025",
-            description: "Assisting in the management and maintenance of the Commission's network infrastructure. Troubleshooting and resolving hardware and software issues. Supporting users with system problems and ensuring network uptime. Documenting technical procedures and contributing to system improvements. Additional Responsibilities: Communications and Multimedia - Coordinated documentary production, videography, and photography projects. Developed visual content to support organizational initiatives. Utilized multimedia assets to enhance communication and engagement."
+            description: "Provided ICT support to staff, resolving hardware, software, and network-related issues. Assisted in administering and maintaining network infrastructure to ensure system reliability and uptime. Supported users with system access issues, installations, and troubleshooting. Documented technical procedures and contributed to system improvements. Additional Responsibilities: Supported documentary production, videography, and photography projects. Developed multimedia content to enhance organizational communication and outreach."
         },
         {
-            title: "Software Development Intern, ICTAID",
+            title: "Software Developer Intern",
+            company: "ICTAID, Lilongwe",
             date: "February 2024 – December 2024",
-            description: "Assisted in testing, debugging, and developing software applications. Provided support on software and hardware troubleshooting. Collaborated on ICT-related project development and documentation. Participated in marketing and client outreach for ICTAID services."
+            description: "Assisted in developing, testing, and debugging software applications. Supported system development projects through documentation and technical assistance. Provided basic hardware and software troubleshooting support. Collaborated with team members on ICT solutions tailored to client needs."
         }
     ];
 
@@ -231,6 +236,7 @@ $(document).ready(function () {
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>${item.title}</h3>
+                    <h4 style="color: var(--secondary-color); font-size: 0.95rem; margin-bottom: 0.5rem;">${item.company}</h4>
                     <p class="timeline-date">${item.date}</p>
                     <p>${item.description}</p>
                 </div>
@@ -270,17 +276,17 @@ $(document).ready(function () {
         {
             title: "Media Support",
             date: "2019–2022",
-            description: "Videography and photography at Bwaila Living Waters Church"
+            description: "Videography and photography – Bwaila Living Waters Church"
+        },
+        {
+             title: "Presidential Debate Taskforce",
+             date: "2025",
+             description: "ICT and operational support"
         },
         {
             title: "Digital Profile Management",
             date: "2022–2024",
-            description: "Managed Walani Tiga Fashion House's Google Business profile"
-        },
-        {
-            title: "Presidential Debate Taskforce",
-            date: "2025",
-            description: "Contributed to the smooth execution of the debate, ensuring a successful outcome"
+            description: "Managed Google Business profile for Walani Tiga Fashion House"
         }
     ];
 
