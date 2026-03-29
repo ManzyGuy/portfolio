@@ -1241,3 +1241,349 @@ button {
         padding-left: 2rem;
     }
 }
+
+/* --- New Redesign Styles --- */
+
+/* Hero Extra Styles */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+.availability-text {
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+.availability-text i {
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.service-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border: 1px solid #f1f5f9;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+    border-color: var(--accent-color);
+}
+.service-icon-wrapper {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+.service-list {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+.service-list li {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.service-list li i {
+    color: var(--success-color);
+    font-size: 0.85rem;
+}
+
+/* Pitch Section */
+.pitch-section {
+    padding: 6rem 2rem;
+}
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+}
+.pitch-text {
+    font-size: 2.25rem;
+    color: white;
+    max-width: 900px;
+    margin: 0 auto;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.pitch-cta {
+    margin-top: 3rem;
+}
+.btn-white {
+    background: white;
+    color: var(--primary-color);
+}
+.btn-white:hover {
+    background: #f1f5f9;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.2);
+}
+
+/* Why Choose Me */
+.pitch-quote {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    font-style: italic;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+.text-accent {
+    color: var(--accent-color);
+}
+.why-choose-me-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.why-choose-me-list li {
+    font-size: 1.15rem;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+.why-choose-me-list li i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+.why-choose-me-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Packages Grid */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+.package-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+    box-shadow: var(--box-shadow);
+    border: 1px solid #f1f5f9;
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+}
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+.package-featured {
+    border-color: var(--accent-color);
+    box-shadow: var(--box-shadow-hover);
+    transform: scale(1.05);
+    z-index: 10;
+}
+.package-featured:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+.package-featured::before {
+    content: "Most Popular";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: white;
+    padding: 0.4rem 1.25rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.package-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.package-features {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.package-features li {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.package-features li i {
+    color: var(--success-color);
+}
+
+/* Contact Section Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.contact-link-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border: 1px solid #f1f5f9;
+    text-decoration: none;
+}
+.contact-link-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow-hover);
+    border-color: var(--accent-color);
+}
+.contact-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+.contact-link-item h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+.contact-link-item span {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+.whatsapp-btn .contact-icon {
+    background: #dcf8c6;
+    color: #25d366;
+}
+.whatsapp-btn:hover {
+    border-color: #25d366;
+}
+
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid #f1f5f9;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Enhanced Project Case Study */
+.projects-carousel .slick-track {
+    display: flex !important;
+}
+.projects-carousel .slick-slide {
+    height: inherit !important;
+}
+.case-study-slide {
+    display: flex !important;
+    align-items: stretch;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin: 1rem;
+    height: auto;
+    border: 1px solid #f1f5f9;
+}
+.case-study-image-container {
+    flex: 1;
+    min-width: 40%;
+}
+.case-study-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.case-study-content {
+    flex: 1.5;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.case-study-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+.case-section {
+    margin-bottom: 1.5rem;
+}
+.case-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.case-section p {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin: 0;
+}
+.bg-primary {
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 992px) {
+    .case-study-slide {
+        flex-direction: column;
+    }
+    .case-study-image-container {
+        height: 300px;
+        min-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .pitch-text {
+        font-size: 1.6rem;
+    }
+    .package-featured {
+        transform: scale(1);
+    }
+    .package-featured:hover {
+        transform: translateY(-5px);
+    }
+}

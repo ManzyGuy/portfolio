@@ -49,117 +49,94 @@ $(document).ready(function () {
         return false;
     });
 
-    // Skills Data
-    // Skills Data
-    const skills = [
-        // Frontend
-        { name: "React.js", description: "Frontend Framework", icon: "fa-brands fa-react", category: "frontend" },
-        { name: "Tailwind CSS", description: "CSS Framework", icon: "fa-solid fa-wind", category: "frontend" },
-        { name: "HTML", description: "Markup Language", icon: "fa-brands fa-html5", category: "frontend" },
-        { name: "CSS", description: "Styling", icon: "fa-brands fa-css3-alt", category: "frontend" },
-        { name: "JavaScript", description: "Programming", icon: "fa-brands fa-js", category: "frontend" },
-
-        // Backend
-        { name: "C# (.NET)", description: "Software Development", icon: "fa-brands fa-microsoft", category: "backend" },
-        { name: "Python", description: "Programming", icon: "fa-brands fa-python", category: "backend" },
-        { name: "R Programming", description: "Data Analysis", icon: "fa-solid fa-chart-bar", category: "backend" },
-        { name: "Express.js", description: "Node.js Framework", icon: "fa-brands fa-node-js", category: "backend" },
-        { name: "PHP", description: "Server-side Scripting", icon: "fa-brands fa-php", category: "backend" },
-
-        // Database
-        { name: "PostgreSQL", description: "Relational Database", icon: "fa-solid fa-database", category: "database" },
-        { name: "MySQL", description: "Database System", icon: "fa-solid fa-database", category: "database" },
-        { name: "SQLite", description: "Embedded Database", icon: "fa-solid fa-server", category: "database" },
-        { name: "Oracle", description: "Enterprise Database", icon: "fa-solid fa-database", category: "database" },
-
-        // Other
-        { name: "Android Dev", description: "Mobile Apps", icon: "fa-brands fa-android", category: "other" },
-        { name: "Web Dev", description: "Web Applications", icon: "fa-solid fa-globe", category: "other" },
-        { name: "Desktop Dev", description: "Desktop Apps", icon: "fa-solid fa-desktop", category: "other" },
-        { name: "System Admin", description: "Windows & Linux", icon: "fa-brands fa-linux", category: "other" },
-        { name: "Networking", description: "LAN, WAN, WLAN", icon: "fa-solid fa-network-wired", category: "other" },
-        { name: "Hardware Support", description: "Maintenance & Repair", icon: "fa-solid fa-screwdriver-wrench", category: "other" },
-        { name: "Tech Support", description: "Security & Installation", icon: "fa-solid fa-headset", category: "other" },
-        { name: "Microsoft Office", description: "Productivity Tools", icon: "fa-brands fa-microsoft", category: "other" }
+    // Services Data
+    const services = [
+        {
+            title: "IT Support & Repairs",
+            icon: "fa-solid fa-wrench",
+            items: [
+                "Computer & phone repair",
+                "Software installation",
+                "Network troubleshooting"
+            ]
+        },
+        {
+            title: "Website Development",
+            icon: "fa-solid fa-globe",
+            items: [
+                "Business websites",
+                "Portfolio sites",
+                "Website maintenance"
+            ]
+        },
+        {
+            title: "Custom Software",
+            icon: "fa-solid fa-code",
+            items: [
+                "Small business systems",
+                "Desktop apps",
+                "Database solutions"
+            ]
+        },
+        {
+            title: "UI/UX Design",
+            icon: "fa-solid fa-pen-nib",
+            items: [
+                "App interfaces",
+                "Wireframes",
+                "User-focused design"
+            ]
+        },
+        {
+            title: "Training & Support",
+            icon: "fa-solid fa-chalkboard-user",
+            items: [
+                "Staff ICT training",
+                "System onboarding",
+                "Basic computer literacy"
+            ]
+        }
     ];
 
-    // Populate Skills Grid
-    const skillsGrid = $('.skills-grid');
-    skills.forEach(skill => {
-        skillsGrid.append(`
-            <div class="skill-card" data-category="${skill.category}">
-                 <div class="skill-icon-wrapper">
-                    <i class="${skill.icon} fa-3x"></i> 
+    // Populate Services Grid
+    const servicesGrid = $('.services-grid');
+    services.forEach(service => {
+        const itemsList = service.items.map(item => `<li><i class="fas fa-check"></i> ${item}</li>`).join('');
+        servicesGrid.append(`
+            <div class="service-card">
+                 <div class="service-icon-wrapper">
+                    <i class="${service.icon} fa-2x"></i> 
                  </div>
-                <h3>${skill.name}</h3>
-                <p>${skill.description}</p>
+                <h3>${service.title}</h3>
+                <ul class="service-list">
+                    ${itemsList}
+                </ul>
             </div>
         `);
-    });
-
-    // Skills Filter
-    $('.filter-btn').on('click', function () {
-        $('.filter-btn').removeClass('active');
-        $(this).addClass('active');
-
-        const filter = $(this).data('filter');
-        if (filter === 'all') {
-            $('.skill-card').show();
-        } else {
-            $('.skill-card').hide();
-            $(`.skill-card[data-category="${filter}"]`).show();
-        }
     });
 
     // Projects Data
     const projects = [
         {
-            title: "Company Websites",
-            description: "Developed websites for several companies using modern web technologies.",
-            image: "https://placehold.co/600x400/2563eb/ffffff?text=Company+Websites",
-            tags: ["HTML", "CSS", "JavaScript"]
+            title: "Inventory System for Small Business",
+            problem: "Manual tracking was slow and error-prone.",
+            solution: "Built a desktop app with database integration focusing on ease of use.",
+            result: "Improved tracking efficiency and significantly reduced errors.",
+            image: "https://placehold.co/600x400/2563eb/ffffff?text=Inventory+System"
         },
         {
-            title: "Brochure Website",
-            description: "Created an informative website for a school project with responsive design.",
-            image: "https://placehold.co/600x400/10b981/ffffff?text=Brochure+Website",
-            tags: ["HTML", "CSS", "Bootstrap"]
+            title: "School Communication Portal",
+            problem: "Parents were missing important updates and fee notifications.",
+            solution: "Developed a responsive web portal for seamless announcements.",
+            result: "Increased engagement and faster information dissemination.",
+            image: "https://placehold.co/600x400/10b981/ffffff?text=School+Portal"
         },
         {
-            title: "Expense Tracking System",
-            description: "Designed a Windows desktop application for tracking expenses with reporting features.",
-            image: "https://placehold.co/600x400/f59e0b/ffffff?text=Expense+Tracker",
-            tags: ["C#", ".NET", "SQL"]
-        },
-        {
-            title: "Database Prototype",
-            description: "Developed a MySQL database for data management with complex relationships.",
-            image: "https://placehold.co/600x400/6366f1/ffffff?text=Database+Prototype",
-            tags: ["MySQL", "Database Design"]
-        },
-        {
-            title: "Security Application",
-            description: "Built a mobile panic button app for emergency situations with GPS tracking.",
-            image: "https://placehold.co/600x400/ef4444/ffffff?text=Security+App",
-            tags: ["Android", "Java", "Firebase"]
-        },
-        {
-            title: "AI Chatbot",
-            description: "Developed an interactive chatbot as a side project using natural language processing.",
-            image: "https://placehold.co/600x400/8b5cf6/ffffff?text=AI+Chatbot",
-            tags: ["Python", "NLP", "Machine Learning"]
-        },
-        {
-            title: "School Information Website",
-            description: "Responsive school website with admissions portal, gallery, and content management system.",
-            image: "https://placehold.co/600x400/ec4899/ffffff?text=School+Website",
-            tags: ["PHP", "MySQL", "JavaScript"]
-        },
-        {
-            title: "Church Media Support",
-            description: "Managed website content and digital media to enhance communication and visibility.",
-            image: "https://placehold.co/600x400/06b6d4/ffffff?text=Media+Support",
-            tags: ["WordPress", "CMS"]
+            title: "Local Retailer IT Upgrade",
+            problem: "Outdated hardware and frequent network failures.",
+            solution: "Repaired existing machines, upgraded network, and trained staff.",
+            result: "Zero downtime in the last 6 months and faster checkout times.",
+            image: "https://placehold.co/600x400/f59e0b/ffffff?text=IT+Upgrade"
         }
     ];
 
@@ -169,19 +146,12 @@ $(document).ready(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 6000,
         dots: true,
         arrows: true,
         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
         nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
         responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
             {
                 breakpoint: 768,
                 settings: {
@@ -193,15 +163,28 @@ $(document).ready(function () {
 
     // Populate Projects Carousel
     projects.forEach(project => {
-        const tagsHTML = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
-
         $('.projects-carousel').slick('slickAdd', `
-            <div class="project-slide">
-                <img src="${project.image}" alt="${project.title}" class="project-image">
-                <div class="project-content">
+            <div class="project-slide case-study-slide">
+                <div class="case-study-image-container">
+                    <img src="${project.image}" alt="${project.title}" class="project-image">
+                </div>
+                <div class="project-content case-study-content">
                     <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <div class="project-tags">${tagsHTML}</div>
+                    
+                    <div class="case-section">
+                        <h4><i class="fas fa-exclamation-circle" style="color: #ef4444;"></i> The Problem</h4>
+                        <p>${project.problem}</p>
+                    </div>
+                    
+                    <div class="case-section">
+                        <h4><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> The Solution</h4>
+                        <p>${project.solution}</p>
+                    </div>
+                    
+                    <div class="case-section">
+                        <h4><i class="fas fa-chart-line" style="color: #10b981;"></i> The Result</h4>
+                        <p>${project.result}</p>
+                    </div>
                 </div>
             </div>
         `);
@@ -210,22 +193,19 @@ $(document).ready(function () {
     // Experience Data
     const experience = [
         {
-            title: "ICT Tutor & Freelance ICT Consultant",
-            company: "Self-Employed, Lilongwe",
-            date: "October 2025 – Present",
-            description: "Deliver ICT tutoring to students and professionals, focusing on practical understanding and confidence in technology use. Train users on software applications, basic computing, and digital productivity tools. Provide freelance ICT support including system setup, configuration, and troubleshooting. Develop clear explanations and training materials to help users understand and adopt systems effectively."
-        },
-        {
-            title: "Systems / ICT Support Intern",
-            company: "Malawi Human Rights Commission (MHRC), Lilongwe",
-            date: "July 2025 – October 2025",
-            description: "Provided ICT support to staff, resolving hardware, software, and network-related issues. Assisted in administering and maintaining network infrastructure to ensure system reliability and uptime. Supported users with system access issues, installations, and troubleshooting. Documented technical procedures and contributed to system improvements. Additional Responsibilities: Supported documentary production, videography, and photography projects. Developed multimedia content to enhance organizational communication and outreach."
+            title: "ICT Support Intern",
+            company: "Malawi Human Rights Commission (MHRC)",
+            description: "Helped maintain systems, resolved user issues, and supported network operations."
         },
         {
             title: "Software Developer Intern",
-            company: "ICTAID, Lilongwe",
-            date: "February 2024 – December 2024",
-            description: "Assisted in developing, testing, and debugging software applications. Supported system development projects through documentation and technical assistance. Provided basic hardware and software troubleshooting support. Collaborated with team members on ICT solutions tailored to client needs."
+            company: "ICTAID",
+            description: "Worked on software development, debugging, and system support."
+        },
+        {
+            title: "ICT Tutor",
+            company: "Shinning Stars Academy",
+            description: "Taught ICT and supported system setup."
         }
     ];
 
@@ -237,78 +217,12 @@ $(document).ready(function () {
                 <div class="timeline-content">
                     <h3>${item.title}</h3>
                     <h4 style="color: var(--secondary-color); font-size: 0.95rem; margin-bottom: 0.5rem;">${item.company}</h4>
-                    <p class="timeline-date">${item.date}</p>
-                    <p>${item.description}</p>
+                    <p style="margin-top: 0.5rem;">${item.description}</p>
                 </div>
             </div>
         `;
         timeline.append(itemHTML);
     });
-
-    // Certifications Data
-    const certifications = [
-        {
-            name: "Level 4 Diploma in Computing",
-            issuer: "NCC Education",
-            logo: "https://placehold.co/200x80/0f172a/ffffff?text=NCC+Logo"
-        },
-        {
-            name: "Level 5 Advanced Diploma in Computing",
-            issuer: "NCC Education",
-            logo: "https://placehold.co/200x80/0f172a/ffffff?text=NCC+Logo"
-        }
-    ];
-
-    // Populate Certifications Grid
-    const certificationsGrid = $('.certifications-grid');
-    if (certificationsGrid.length) {
-        certifications.forEach(certification => {
-            const card = `
-                <div class="certification-card">
-                    <img src="${certification.logo}" alt="${certification.issuer}" class="card-logo">
-                    <h3>${certification.name}</h3>
-                    <p>${certification.issuer}</p>
-                </div>
-            `;
-            certificationsGrid.append(card);
-        });
-    }
-
-    // Volunteer Work Data
-    const volunteerWork = [
-        {
-            title: "Media Support",
-            date: "2019–2022",
-            description: "Videography and photography – Bwaila Living Waters Church"
-        },
-        {
-            title: "Presidential Debate Taskforce",
-            date: "2025",
-            description: "ICT and operational support"
-        },
-        {
-            title: "Digital Profile Management",
-            date: "2022–2024",
-            description: "Managed Google Business profile for Walani Tiga Fashion House"
-        }
-    ];
-
-    // Populate Volunteer Work Timeline
-    const volunteerTimeline = $('.volunteer-timeline');
-    if (volunteerTimeline.length) {
-        volunteerWork.forEach((item, index) => {
-            const itemHTML = `
-                <div class="volunteer-item">
-                    <div class="volunteer-content">
-                        <h3>${item.title}</h3>
-                        <p class="volunteer-date">${item.date}</p>
-                        <p>${item.description}</p>
-                    </div>
-                </div>
-            `;
-            volunteerTimeline.append(itemHTML);
-        });
-    }
 
     // Contact Form Submission
     $('#contactForm').on('submit', function (e) {
@@ -317,12 +231,11 @@ $(document).ready(function () {
         // Get form values
         const name = $('#name').val();
         const email = $('#email').val();
-        const subject = $('#subject').val();
         const message = $('#message').val();
 
         // Simple validation
         if (!name || !email || !message) {
-            alert('Please fill in all required fields.');
+            alert('Please fill in all fields.');
             return;
         }
 
@@ -333,22 +246,4 @@ $(document).ready(function () {
         // Reset form
         this.reset();
     });
-
-    // Download CV Button
-    $('#download-cv').on('click', function (e) {
-        e.preventDefault();
-        alert('Downloading CV...');
-        // In a real implementation, this would trigger a file download
-        // window.location.href = 'path/to/cv.pdf';
-    });
-
-    // Typed.js Animation for Hero Subtitle
-    if ($('.hero-subtitle').length) {
-        const typed = new Typed('.hero-subtitle', {
-            strings: ['Software Developer', 'Problem Solver', 'Tech Enthusiast', 'Continuous Learner'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
-        });
-    }
 });
