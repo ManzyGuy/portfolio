@@ -1613,14 +1613,31 @@ button {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .contact-info {
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
     }
     .contact-link-item {
         flex-direction: column;
         text-align: center;
         padding: 1.5rem 1rem;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+    .contact-link-item div {
+        max-width: 100%;
     }
     .contact-form {
         padding: 1.5rem;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     /* Pitch Section Fixes */
