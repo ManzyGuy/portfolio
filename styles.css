@@ -1571,19 +1571,87 @@ button {
         height: 300px;
         min-width: 100%;
     }
+    .case-study-content {
+        padding: 2rem;
+    }
 }
 @media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    /* Hero Section Mobile Fixes */
+    .hero-title {
+        font-size: 2.25rem !important;
+        margin-bottom: 1rem;
     }
-    .pitch-text {
-        font-size: 1.6rem;
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        margin-bottom: 2rem;
+    }
+    .hero-buttons {
+        gap: 1rem;
+        flex-direction: column;
+        width: 100%;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Fix Grid Overflows */
+    .services-grid, 
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    .package-card {
+        padding: 2rem 1.5rem;
     }
     .package-featured {
         transform: scale(1);
     }
     .package-featured:hover {
         transform: translateY(-5px);
+    }
+    
+    /* Contact Section Fixes */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .contact-link-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    /* Pitch Section Fixes */
+    .pitch-text {
+        font-size: 1.4rem;
+        line-height: 1.6;
+    }
+    .pitch-section {
+        padding: 4rem 1rem;
+    }
+    
+    /* Why Choose Me Box Fixes */
+    .pitch-quote {
+        font-size: 1.25rem;
+        padding-left: 1rem;
+        border-left-width: 3px;
+    }
+    .why-choose-me-list li {
+        font-size: 1rem;
+    }
+    
+    /* Footer Stacking */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    .footer-brand {
+        margin: 0 auto;
+    }
+    .footer-brand p {
+        margin: 0 auto;
     }
 }
