@@ -224,9 +224,38 @@ $(document).ready(function () {
         timeline.append(itemHTML);
     });
 
+    // EmailJS Configuration
+    const CONFIG = {
+        PUBLIC_KEY: "Ij2q37f5uL0CJI-Np",
+        SERVICE_ID: "service_wiofnb8",
+        TEMPLATE_ID: "template_mhss4cl"
+    };
+
+    // Initialize EmailJS
+    emailjs.init(CONFIG.PUBLIC_KEY);
+
+    function showStatus(message, type) {
+        const $status = $('#form-status');
+        $status.text(message)
+            .removeClass('success error')
+            .addClass(type)
+            .css({
+                'background-color': type === 'error' ? '#fee2e2' : '#d1fae5',
+                'color': type === 'error' ? '#ef4444' : '#10b981',
+                'border': type === 'error' ? '1px solid #fca5a5' : '1px solid #6ee7b7'
+            })
+            .fadeIn();
+    }
+
     // Contact Form Submission
     $('#contactForm').on('submit', function (e) {
         e.preventDefault();
+
+        const form = this;
+        const $btn = $('#submitBtn');
+        const $btnText = $btn.find('.btn-text');
+        const $spinner = $('#submitSpinner');
+        const $status = $('#form-status');
 
         // Get form values
         const name = $('#name').val();
@@ -236,20 +265,45 @@ $(document).ready(function () {
 
         // Simple validation
         if (!name || !email || !phone || !message) {
-            alert('Please fill in all fields.');
+            showStatus('Please fill in all fields.', 'error');
             return;
         }
 
-        // Send email via mailto
-        const subject = encodeURIComponent(`New Inquiry from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
-        
-        window.location.href = `mailto:kawongaemmanuel3@gmail.com?subject=${subject}&body=${body}`;
+        // reCAPTCHA Validation
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (recaptchaResponse.length === 0) {
+            showStatus('Please verify that you are not a robot.', 'error');
+            return;
+        }
 
-        // Show success message
-        alert(`Thank you, ${name}! Your email client has been opened to send the message.`);
+        // Set Loading State
+        $btn.prop('disabled', true).css('opacity', '0.7');
+        $btnText.text('Sending...');
+        $spinner.show();
+        $status.hide();
 
-        // Reset form
-        this.reset();
+        const templateParams = {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message,
+            'g-recaptcha-response': recaptchaResponse
+        };
+
+        emailjs.send(CONFIG.SERVICE_ID, CONFIG.TEMPLATE_ID, templateParams)
+            .then(function (response) {
+                showStatus('Message sent successfully! I will get back to you soon.', 'success');
+                form.reset();
+                grecaptcha.reset();
+            }, function (error) {
+                console.error('FAILED...', error);
+                showStatus('Failed to send the message. Please try again later.', 'error');
+            })
+            .finally(function () {
+                // Reset Button State
+                $btn.prop('disabled', false).css('opacity', '1');
+                $btnText.text('Send Message');
+                $spinner.hide();
+            });
     });
 });
