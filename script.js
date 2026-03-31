@@ -231,17 +231,23 @@ $(document).ready(function () {
         // Get form values
         const name = $('#name').val();
         const email = $('#email').val();
+        const phone = $('#phone').val();
         const message = $('#message').val();
 
         // Simple validation
-        if (!name || !email || !message) {
+        if (!name || !email || !phone || !message) {
             alert('Please fill in all fields.');
             return;
         }
 
-        // Here you would typically send the form data to a server
-        // For this example, we'll just show a success message
-        alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+        // Send email via mailto
+        const subject = encodeURIComponent(`New Inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
+        
+        window.location.href = `mailto:kawongaemmanuel3@gmail.com?subject=${subject}&body=${body}`;
+
+        // Show success message
+        alert(`Thank you, ${name}! Your email client has been opened to send the message.`);
 
         // Reset form
         this.reset();
